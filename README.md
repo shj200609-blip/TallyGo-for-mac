@@ -19,6 +19,10 @@ Mac：打开 `.dmg`，将 TallyGo 拖入“应用程序”。此版本仅支持 
 
 Mac: Open the `.dmg` and drag TallyGo to Applications. This build supports Apple Silicon (M-series chips) only and requires macOS 11 or later. The current DMG is ad-hoc signed; macOS may ask you to allow the app under System Settings → Privacy & Security on first launch. Windows: open the installer and follow the prompts. Users do not need Node.js, Rust, or other runtimes.
 
+macOS 版本使用系统字体、原生滚动条和 macOS 应用菜单，窗口支持更紧凑的分屏尺寸。应用保持本地优先：SQLite 数据库、导入导出文件和主题偏好都保存在本机。
+
+The macOS build uses system fonts, native scrollbars, and a macOS application menu, with a compact window size suitable for split view. The app remains local-first: the SQLite database, import/export files, and theme preference stay on the device.
+
 ---
 
 ## 🚀 快速上手 / Quick Start
@@ -76,6 +80,10 @@ Set a monthly total or per-category budget on the **Budgets** page — you'll be
 
 **数据库位置 / DB location:** Windows `%APPDATA%\com.tallygo.desktop\tallygo.db`；macOS `~/Library/Application Support/com.tallygo.desktop/tallygo.db`
 
+数据库按日期和常用关联字段建立索引，账单列表最多显示最近 1000 条记录。金额和账户余额会在记账、修改、删除时同步更新；建议定期使用 JSON 导出备份。
+
+The database indexes dates and common relationship fields, and the records view shows up to the latest 1,000 records. Amounts and account balances are updated when records are added, edited, or deleted. Regular JSON exports are recommended for backup.
+
 ---
 
 ## 🌐 语言与外观 / Language & Theme
@@ -106,6 +114,10 @@ npm run tauri dev      # 开发模式 Development
 npm run tauri build    # 打包 Installers → src-tauri/target/release/bundle/
 npm run build:mac:arm64 # Apple Silicon DMG → src-tauri/target/aarch64-apple-darwin/release/bundle/dmg/
 ```
+
+`build:mac:arm64` 只生成 Apple Silicon（`aarch64-apple-darwin`）DMG，不兼容 Intel Mac。
+
+`build:mac:arm64` produces an Apple Silicon-only (`aarch64-apple-darwin`) DMG and does not support Intel Macs.
 
 推送 `v*` 格式的 Git 标签（例如 `v0.2.0`）会触发 GitHub Actions，在 Apple Silicon macOS runner 上构建 ARM64 DMG 并附加到 GitHub Release。
 
