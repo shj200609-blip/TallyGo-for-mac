@@ -11,18 +11,9 @@ Built with Tauri + React + SQLite — small footprint, fast startup, and your da
 
 ## ⬇️ 下载安装 / Download
 
-前往 **[Releases](../../releases)** 页面下载安装包：
+前往 **[Releases](../../releases)** 页面下载 Windows 安装包（`.msi` 或 `.exe`），双击安装即可。
 
-Go to the **[Releases](../../releases)** page and download the installer for your platform:
-
-| 平台 Platform | 文件 File | 说明 Instructions |
-|---------------|-----------|-------------------|
-| Windows | `.msi` 或 `.exe` | 双击安装，按提示完成 / Double-click and follow the prompts |
-| macOS | `.dmg` | 打开后拖入 Applications / Open and drag to Applications |
-| Linux | `.AppImage` | 赋予执行权限后运行 / Make executable then run |
-| Linux | `.deb` | `sudo dpkg -i *.deb` |
-
-> 首次打开 macOS 应用若提示「无法验证开发者」：右键应用 → 打开 / If macOS says "unverified developer": right-click the app → Open
+Go to the **[Releases](../../releases)** page and download the Windows installer (`.msi` or `.exe`), then double-click to install.
 
 无需安装 Node.js、Rust 或任何运行库，安装即用。
 No Node.js, Rust, or runtime required — install and go.
@@ -82,13 +73,7 @@ Set a monthly total or per-category budget on the **Budgets** page — you'll be
 - 备份 = 复制这一个文件，或在 **设置** 中导出 JSON / CSV
 - Backup = copy one file, or export JSON / CSV from **Settings**.
 
-**数据库位置 / DB location:**
-
-| 系统 OS | 路径 Path |
-|---------|-----------|
-| Windows | `%APPDATA%\com.tallygo.desktop\tallygo.db` |
-| macOS | `~/Library/Application Support/com.tallygo.desktop/tallygo.db` |
-| Linux | `~/.local/share/com.tallygo.desktop/tallygo.db` |
+**数据库位置 / DB location:** `%APPDATA%\com.tallygo.desktop\tallygo.db`
 
 ---
 
@@ -108,10 +93,7 @@ Set a monthly total or per-category budget on the **Budgets** page — you'll be
 ### 环境要求 Requirements
 
 - Node.js 18+
-- Rust（`rustup`）+ 系统 C++ 构建工具
-  - Windows：Visual Studio Build Tools（含 C++ 桌面开发）
-  - macOS：Xcode Command Line Tools
-  - Linux：`build-essential`、`libwebkit2gtk` 等 Tauri 依赖
+- Rust（`rustup`）+ Visual Studio Build Tools（含 C++ 桌面开发）
 
 ### 安装与运行 Install & Run
 
@@ -168,7 +150,7 @@ TallyGo/
 ## ✨ 核心特点 / Highlights
 
 - **🪶 轻量化 Lightweight** — Tauri 2（系统 WebView + Rust）而非 Electron：安装包小、内存低、冷启动快、无后台常驻
-- **🚀 易部署 Easy to deploy** — 一条命令开发 `npm run tauri dev`，一条命令打包 `npm run tauri build`，Windows / macOS / Linux 跨平台
+- **🚀 易部署 Easy to deploy** — 一条命令开发 `npm run tauri dev`，一条命令打包 `npm run tauri build`
 - **🖱️ 便操作 Easy to use** — 侧边栏导航；三步记账（类型 → 分类 → 金额）；图标点选；月份一键跳转；多条件筛选；自动月度报表
 - **🔒 数据安全 Local only** — 全部数据在本机单个 SQLite 文件，零云端依赖，备份 = 复制一个文件
 
