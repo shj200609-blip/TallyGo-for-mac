@@ -16,7 +16,7 @@ Built with Tauri + React + SQLite — small footprint, fast startup, and your da
 | 平台 / Platform | 下载 / Download |
 |---|---|
 | macOS（Apple Silicon） | [下载 DMG](https://github.com/shj200609-blip/TallyGo-for-mac/releases/latest/download/TallyGo-macOS-Apple-Silicon.dmg) |
-| Windows（x64） | [下载 EXE](https://github.com/shj200609-blip/TallyGo-for-mac/releases/latest/download/TallyGo-Windows-x64.exe) |
+| Windows（x64） | [下载原版 EXE](https://github.com/Junjun404/TallyGo/releases/download/v0.1.0/TallyGo_0.1.0_x64-setup.exe) |
 
 Download the installer for your platform using the links above. The Windows build is for x64 PCs; the macOS build is for Apple Silicon only.
 
@@ -124,9 +124,9 @@ npm run build:mac:arm64 # Apple Silicon DMG → src-tauri/target/aarch64-apple-d
 
 `build:mac:arm64` produces an Apple Silicon-only (`aarch64-apple-darwin`) DMG and does not support Intel Macs.
 
-推送 `v*` 格式的 Git 标签（例如当前版本 `v0.1.0`）会触发 GitHub Actions，在 Apple Silicon macOS runner 和 Windows runner 上分别构建 DMG 与 EXE，再将两个文件附加到同一个 GitHub Release。下载链接会始终指向最新 Release 的对应安装包。
+推送 `v*` 格式的 Git 标签（例如当前版本 `v0.1.0`）会触发 GitHub Actions，为 Apple Silicon 构建 DMG 并附加到此仓库的 GitHub Release。Windows 下载直接使用原始仓库 `Junjun404/TallyGo` 发布的 x64 EXE。
 
-Pushing a Git tag matching `v*` (for example, the current `v0.1.0`) triggers GitHub Actions to build the DMG and EXE on macOS Apple Silicon and Windows runners, then attach both files to the same GitHub Release. The download links always point to the matching assets in the latest release.
+Pushing a Git tag matching `v*` (for example, the current `v0.1.0`) triggers GitHub Actions to build an Apple Silicon DMG and attach it to this repository's GitHub Release. The Windows download uses the x64 EXE published by the original `Junjun404/TallyGo` repository.
 
 ### 常用命令 Commands
 
