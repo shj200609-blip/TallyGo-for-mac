@@ -11,9 +11,14 @@ Built with Tauri + React + SQLite — small footprint, fast startup, and your da
 
 ## ⬇️ 下载安装 / Download
 
-前往 **[Releases](../../releases)** 页面下载对应安装包：Apple Silicon Mac 下载 `.dmg`，Windows 下载 `.msi` 或 `.exe`。
+**当前版本 / Current version: `v0.1.0`**
 
-Go to the **[Releases](../../releases)** page and download the matching package: `.dmg` for Apple Silicon Macs, or `.msi` / `.exe` for Windows.
+| 平台 / Platform | 下载 / Download |
+|---|---|
+| macOS（Apple Silicon） | [下载 DMG](https://github.com/shj200609-blip/TallyGo-for-mac/releases/latest/download/TallyGo-macOS-Apple-Silicon.dmg) |
+| Windows（x64） | [下载 EXE](https://github.com/shj200609-blip/TallyGo-for-mac/releases/latest/download/TallyGo-Windows-x64.exe) |
+
+Download the installer for your platform using the links above. The Windows build is for x64 PCs; the macOS build is for Apple Silicon only.
 
 Mac：打开 `.dmg`，将 TallyGo 拖入“应用程序”。此版本仅支持 Apple Silicon（M 系列芯片），最低 macOS 11。当前 DMG 使用 ad-hoc 签名，首次打开时 macOS 可能要求在“系统设置 → 隐私与安全性”中允许打开。Windows：打开安装包并按提示安装。用户无需安装 Node.js、Rust 或其他运行库。
 
@@ -119,9 +124,9 @@ npm run build:mac:arm64 # Apple Silicon DMG → src-tauri/target/aarch64-apple-d
 
 `build:mac:arm64` produces an Apple Silicon-only (`aarch64-apple-darwin`) DMG and does not support Intel Macs.
 
-推送 `v*` 格式的 Git 标签（例如 `v0.2.0`）会触发 GitHub Actions，在 Apple Silicon macOS runner 上构建 ARM64 DMG 并附加到 GitHub Release。
+推送 `v*` 格式的 Git 标签（例如当前版本 `v0.1.0`）会触发 GitHub Actions，在 Apple Silicon macOS runner 和 Windows runner 上分别构建 DMG 与 EXE，再将两个文件附加到同一个 GitHub Release。下载链接会始终指向最新 Release 的对应安装包。
 
-Pushing a Git tag matching `v*` (for example, `v0.2.0`) triggers GitHub Actions to build an ARM64 DMG on an Apple Silicon macOS runner and attach it to a GitHub Release.
+Pushing a Git tag matching `v*` (for example, the current `v0.1.0`) triggers GitHub Actions to build the DMG and EXE on macOS Apple Silicon and Windows runners, then attach both files to the same GitHub Release. The download links always point to the matching assets in the latest release.
 
 ### 常用命令 Commands
 
